@@ -37,6 +37,10 @@ module Guard
       end
     end
 
+    def self.template(plugin_location)
+      File.read("#{ plugin_location }/lib/guard/jruby-minitest/templates/Guardfile")
+    end
+
     private
 
       def matched_paths(raw_paths)
