@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'guard/jruby/minitest/version'
+require 'guard/jruby-minitest/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "guard-jruby-minitest"
-  spec.version       = Guard::Jruby::Minitest::VERSION
+  spec.version       = Guard::JRubyMinitestVersion::VERSION
   spec.authors       = ["Jack Xu"]
   spec.email         = ["jackxxu@gmail.com"]
   spec.summary       = %q{Guard gem for JRuby Minitest}
@@ -19,7 +19,9 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'guard', '>= 0.10.0'
-  spec.add_dependency 'guard-minitest', '>= 0.7.3'
+  spec.add_dependency 'guard-minitest', '>= 2.3.0'
+  spec.add_dependency 'ruby_parser', '>= 3.0'
+  spec.add_dependency 'pry', '~> 0.9.12'
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
