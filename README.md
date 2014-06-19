@@ -1,5 +1,7 @@
 # guard-jruby-minitest
 
+[![Gem Version](https://badge.fury.io/rb/guard-jruby-minitest.svg)](http://badge.fury.io/rb/guard-jruby-minitest)
+
 Guard has been a great productivity booster when used in a TDD environment. However, JRuby makes TDD harder, if not impossible. It is due to the fact that, by default, every `run_on_modification` or `run_on_change` starts a new process, which incurs [the long JVM start time]. Some approaches have been attempted, such as [Drip] or [Nailgun].
 
 This guard extension allows you to run all of your tests on JRuby without the initial start up cost every time. It loads all of your application files in advance, and reloads any that change. That way, when you run test, the JVM is already running, and your files have already been required.
