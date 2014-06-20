@@ -19,9 +19,8 @@ module Guard
     def initialize(options = {})
       @custom_watchers = options[:watchers]
       general_watchers = [Watcher.new(%r{^(.+)\.rb$}), Watcher.new(%r{^(.+)\.(erb|haml)$})]
-      super(options.merge(watchers: general_watchers))
       TestPaths.test_folders = options[:test_folders]
-      super
+      super(options.merge(watchers: general_watchers))
     end
 
     def run_all
