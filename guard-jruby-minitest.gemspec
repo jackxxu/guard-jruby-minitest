@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency 'minitest'
   spec.add_dependency 'guard', '>= 0.10.0'
   spec.add_dependency 'guard-minitest', '>= 2.3.0'
   spec.add_dependency 'ruby_parser', '>= 3.0'
