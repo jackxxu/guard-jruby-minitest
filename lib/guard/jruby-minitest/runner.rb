@@ -19,6 +19,11 @@ module Guard
         end
       end
 
+      def run_on_modifications(paths = [])
+        paths = inspector.clean(paths)
+        run(paths, all: false) # always reloads each test file
+      end
+
       private
 
         def reload(path, all)

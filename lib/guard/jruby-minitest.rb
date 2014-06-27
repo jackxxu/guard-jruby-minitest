@@ -13,9 +13,9 @@ module Guard
     require_relative 'jruby-minitest/reloaders/test_paths_reloader'
 
     class << self
-      attr_accessor :reloaders
-      @reloaders = [RailsReloader, AppPathsReloader, FactoryGirlReloader]
+      attr_reader :reloaders
     end
+    @reloaders = [RailsReloader, AppPathsReloader, FactoryGirlReloader]
 
     unless Utils.minitest_version_gte_5?
       require_relative 'jruby-minitest/runners/old_runner'

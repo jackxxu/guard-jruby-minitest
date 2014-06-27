@@ -12,12 +12,13 @@ This gem should work with Rails as well as Rack applications.
 
 ## Reloaders
 
-Currently, `guard` runs the following reloaders when part of application is changed:
+Currently, `guard` runs the following reloaders sequentially when part of application is changed:
 
 * `AppPathsReloader`: Reloads the application (non-test) code.
 * `FactoryGirlReloader`: Reloads the `factory_girl` factories.
 * `RailsReloader`: Reloads the entire application if the application is a Rails app.
 * `TestPathsReloader`: Reloads the tests. This is the most tricky part because of the way `minitest` run tests.
+* Your custom reloader, as long as it supports `run` method. You can do so by `Guard::JRubyMinitest.reloaders << YOUR_CUSTOM_RELOADER`
 
 ## Caveats
 
